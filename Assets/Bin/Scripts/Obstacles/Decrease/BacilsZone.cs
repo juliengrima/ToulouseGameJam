@@ -11,13 +11,16 @@ namespace EnvironmentObstacles
         [SerializeField] float _timer;
         [SerializeField] float _damages;
         //PRIVATE
+        AudioManager _audioManager;
         Vector3 _scaleLife;
+        bool _inZone;
         //PUBLIC
         #endregion
         #region Default Informations
         void Reset()
         {
-            _damages = 0.1f;
+            _timer = 5;
+            _damages = 0.05f;
         }
         #endregion
         #region Unity LifeCycle
@@ -29,7 +32,9 @@ namespace EnvironmentObstacles
         }
         void Start()
         {
+            _audioManager = AudioManager.Instance;
             _scaleLife = new Vector3(_damages, _damages, _damages);
+            _inZone = false;
         }
 
         // Update is called once per frame
@@ -37,18 +42,20 @@ namespace EnvironmentObstacles
         #region Methods
         void OnTriggerEnter(Collider other)
         {
-            Debug.Log("On trigger enter");
             if (other.CompareTag("Player"))
             {
+                //Debug.Log("On trigger enter");
+                _inZone = true;
                 StartCoroutine(HitCoroutine());
             }
         }
 
         void OnTriggerExit(Collider other)
         {
-            Debug.Log("On trigger exit");
             if (other.CompareTag("Player"))
             {
+                //Debug.Log("On trigger exit");
+                _inZone = false;
                 StopCoroutine(HitCoroutine());
             }
         }
@@ -56,9 +63,12 @@ namespace EnvironmentObstacles
         #region Coroutines
         IEnumerator HitCoroutine()
         {
-            yield return new WaitForSeconds(_timer);
-            PlayerHealth.Instance.TakeDamage(_scaleLife);
-            
+            while (_inZone)
+            {
+                PlayerHealth.Instance.TakeDamage(_scaleLife);
+                yield return new WaitForSeconds(_timer);
+            }
+               
         }
         #endregion
     }
