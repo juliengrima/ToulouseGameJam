@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b917face8e5c64ac7b1443cb52169ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rayDistance: 1.3
+  _rayDistance: 0.6
   _layers:
     serializedVersion: 2
     m_Bits: 64
@@ -386,8 +386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c575263ac42764169b07cbb96c0a37bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 10
-  _forwardForce: 5
+  _jumpForce: 5
+  _baseForwardForce: 1
+  _maxForwardForce: 10
+  _chargeRate: 10
 --- !u!1 &3731205846411893243
 GameObject:
   m_ObjectHideFlags: 0
