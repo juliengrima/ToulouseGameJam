@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Entities;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using PhysicsEntities;
 
 
 namespace Manager
@@ -24,6 +26,10 @@ namespace Manager
         [Header("Respawn Settings")]
         [SerializeField] string _sceneName;
         [SerializeField] float _Timer;
+        [Header("Events")]
+        [SerializeField] UnityEvent _hitEvent;
+        [SerializeField] UnityEvent _healEvent;
+        [SerializeField] UnityEvent _deathEvent;
         //PRIVATE
         AudioManager _audioManager;
         //PUBLIC
@@ -57,7 +63,7 @@ namespace Manager
         void Start()
         {
             _audioManager = AudioManager.Instance;
-            _playerGameObject.transform.localScale = new Vector3(1, 1, 1);
+            _player.ScaleLife = new Vector3(1, 1, 1);
         }
 
         // Update is called once per frame
@@ -69,7 +75,9 @@ namespace Manager
         #region Methods
         public void TakeDamage(Vector3 scaleLife)
         {
+            //Debug.Log($"Heal = {scaleLife}");
             _player.ScaleLife -= scaleLife;
+            _hitEvent.Invoke();
             //_audioManager?.PlayerTakeDamage();
 
             if (_player.ScaleLife.x < _minScale &&
@@ -77,13 +85,26 @@ namespace Manager
                 _player.ScaleLife.z < _minScale)
             {
                 //HandlePlayerDeath(_audioManager.PlayerSmallDeath);
-            }
+                Jump jump = _playerGameObject.GetComponentInChildren<Jump>();
+                jump.enabled = false;
+                _player.ScaleLife = new Vector3(0.2f, 0.2f, 0.2f);
 
+                Debug.Log($"Jump Script = {jump.enabled}");
+                Debug.Log("Player is dead");
+
+                PlayerDeathCoroutine();
+
+                _deathEvent.Invoke();
+            }
         }
 
         public void HealScaleLife(Vector3 healAmount)
         {
+            //Debug.Log($"Heal = {healAmount}");
             _player.ScaleLife += healAmount;
+            Grounded grounded = _playerGameObject.GetComponentInChildren<Grounded>();
+            //grounded.RayDistance = 
+            _healEvent.Invoke();
             //_audioManager?.PlayerHeal();
 
             if (_player.ScaleLife.x > _maxScale &&
@@ -91,6 +112,13 @@ namespace Manager
                 _player.ScaleLife.z > _maxScale)
             {
                 //HandlePlayerDeath(_audioManager.PlayerBigDeath);
+                Jump jump = _playerGameObject.GetComponentInChildren<Jump>();
+                jump.enabled = false;
+                _player.ScaleLife = new Vector3(_maxScale, _maxScale, _maxScale);
+
+                PlayerDeathCoroutine();
+
+                _deathEvent.Invoke();
             }
         }
 

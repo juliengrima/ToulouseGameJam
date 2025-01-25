@@ -25,6 +25,7 @@ namespace PhysicsEntities
         //PUBLIC
         public static Grounded Instance;
         public bool IsGrounded { get => _isGrounded; }
+        public float RayDistance { get => _rayDistance; set => _rayDistance = value; }
         #endregion
         #region Default Informations
         void Reset()
