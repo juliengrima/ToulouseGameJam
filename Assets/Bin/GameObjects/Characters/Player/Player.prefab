@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 5
-  _baseForwardForce: 1
+  _baseForwardForce: 2
   _maxForwardForce: 10
   _chargeRate: 10
 --- !u!1 &3731205846411893243
