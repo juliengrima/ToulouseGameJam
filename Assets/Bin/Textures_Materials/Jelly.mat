@@ -109,16 +109,19 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Disturbance_Strength: 0.9
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Frequency: 10
+    - _FresnelPower: 0.32
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _ImpactSpeed: 0.5
     - _MaxWaveDistortion: 1
     - _Metallic: 0.918
+    - _NoiseScale: 0.4
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -138,8 +141,10 @@ Material:
     - _BaseColor: {r: 0.43543077, g: 0.56874794, b: 0.8962264, a: 1}
     - _Color: {r: 0.4354307, g: 0.56874794, b: 0.8962264, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor_2: {r: 0.05529102, g: 0.09630112, b: 0.3349057, a: 0}
     - _ImpactOrigin: {r: -5, g: 0, b: 0, a: 0}
     - _ModelOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _Offset: {r: 0, g: 4, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
