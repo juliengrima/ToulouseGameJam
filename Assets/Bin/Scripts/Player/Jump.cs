@@ -56,14 +56,14 @@ namespace Entities
         {
             if (_inputsManager.GetClick() && _grounded.IsGrounded == true)
             {
-                Debug.Log("Player is charging");
+                //Debug.Log("Player is charging");
                 StartCharging();
             }
             else
             {
                 if (_isCharging)
                 {
-                    Debug.Log("Player is Jumping");
+                    //Debug.Log("Player is Jumping");
                     PerformJump();
                     ResetCharge();
                 }
