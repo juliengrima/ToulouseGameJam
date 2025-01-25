@@ -71,7 +71,8 @@ namespace Manager
         #region MovementInput Methods
         public bool GetClick()
         {
-            return _playerInputs.Player.Jump.WasPressedThisFrame();
+            //return _playerInputs.Player.Jump.WasPressedThisFrame();
+            return _playerInputs.Player.Jump.IsPressed();
         }
 
         //public bool ClickToMove()

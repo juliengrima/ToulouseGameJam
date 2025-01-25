@@ -44,7 +44,7 @@ namespace Manager
                     ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -86,7 +86,7 @@ namespace Manager
                     ""name"": """",
                     ""id"": ""b84a4739-a375-4962-a66b-f2359dc5b0e2"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Jump"",
@@ -97,7 +97,7 @@ namespace Manager
                     ""name"": """",
                     ""id"": ""a5061690-bddc-496a-9693-1b45d282636a"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Jump"",
