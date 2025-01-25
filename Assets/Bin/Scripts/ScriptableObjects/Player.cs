@@ -4,14 +4,16 @@ using UnityEngine;
 public class Player : ScriptableObject
 {
     //INSPECTOR
-    [SerializeField] float _life;
-    [SerializeField] float _bounceForce;
-    [SerializeField] float _scale;
+    [SerializeField] Vector3 _scaleLife;
+    [SerializeField] float _jumpForce;
+    [SerializeField] float _baseForwardForce;
+    [SerializeField] float _maxForwardForce;
     [SerializeField] float _temperature;
     //PRIVATE
     //PUBLIC
-    public float Life { get => _life; set => _life = value; }
-    public float BounceForce { get => _bounceForce; set => _bounceForce = value; }
-    public float Scale { get => _scale; set => _scale = value; }
+    public Vector3 ScaleLife { get => _scaleLife; set => _scaleLife = value; }
+    public float JumpForce { get => _jumpForce; set => _jumpForce = value; }
+    public float BaseForwardForce { get => _baseForwardForce; set => _baseForwardForce = value; }
+    public float MaxForwardForce { get => _maxForwardForce; set => _maxForwardForce = value; }
     public float Temperature { get => _temperature; set => _temperature = value; }
 }

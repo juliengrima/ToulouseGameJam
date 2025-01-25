@@ -971,7 +971,7 @@
     "m_ObjectId": "1fbd2d8724474e839c3a29e057c8ab5a",
     "m_Title": "Tilling Offset Noise",
     "m_Position": {
-        "x": -1489.0001220703125,
+        "x": -1489.0,
         "y": -406.5
     }
 }
@@ -982,7 +982,7 @@
     "m_ObjectId": "20323cf20a1d4bae98192bc2c795043a",
     "m_Title": "Vertex Animation",
     "m_Position": {
-        "x": -873.0001220703125,
+        "x": -873.0,
         "y": -298.0
     }
 }
@@ -3071,8 +3071,8 @@
     "m_ObjectId": "e1708dde9bab4c81a880e475533f92b0",
     "m_Title": "Emission Fresnel",
     "m_Position": {
-        "x": -1611.6099853515625,
-        "y": 527.8414306640625
+        "x": -1611.5,
+        "y": 527.9999389648438
     }
 }
 

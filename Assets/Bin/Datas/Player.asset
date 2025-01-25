@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baa0b0d8cb34940bc60768e12edb6f, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  _life: 100
-  _bounceForce: 0
-  _scale: 1
+  _scaleLife: {x: 1, y: 1, z: 1}
+  _jumpForce: 3
+  _baseForwardForce: 1
+  _maxForwardForce: 10
   _temperature: 20
