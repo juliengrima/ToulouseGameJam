@@ -17,16 +17,17 @@ namespace Entities
     {
         #region Champs
         //INSPECTOR
-        [Header("Jump Information")]
-        [SerializeField] float _jumpForce;
-        [SerializeField] float _baseForwardForce;
-        [SerializeField] float _maxForwardForce;
+        [Header("Player Informations")]
+        [SerializeField] Player _player;
         [Header("Jump Charge")]
         [SerializeField] float _chargeRate;
         //PRIVATE
         private InputsManager _inputsManager;
         private Grounded _grounded;
         private Rigidbody _rb;
+        float _jumpForce;
+        float _baseForwardForce;
+        float _maxForwardForce;
         private float _currentChargeTime;
         private bool _isCharging;
         //PUBLIC
@@ -35,29 +36,18 @@ namespace Entities
         public float BaseForwardForce { get => _baseForwardForce; set => _baseForwardForce = value; }
         #endregion
         #region Default Informations
-        void Reset()
-        {
-            _jumpForce = 5f;
-            _baseForwardForce = 5f;
-            _maxForwardForce = 10;
-            _chargeRate = 10f;
-            _currentChargeTime = 0f;
-        }
         #endregion
         #region Unity LifeCycle
         // Start is called before the first frame update
-    
-        void Awake()
-        {
-        
-        }
-
         void Start()
         {
             _inputsManager = InputsManager.Instance;
             _grounded = Grounded.Instance;
             _rb = GetComponentInParent<Rigidbody>();
 
+            _jumpForce = _player.JumpForce;
+            _baseForwardForce = _player.BaseForwardForce;
+            _maxForwardForce = _player.MaxForwardForce;
             _isCharging = false;
         }
 
@@ -83,7 +73,7 @@ namespace Entities
         {
             _isCharging = true;
             _currentChargeTime += Time.deltaTime;
-            Debug.Log($"CurrentChargTime = {_currentChargeTime}");
+            //Debug.Log($"CurrentChargTime = {_currentChargeTime}");
         }
 
         private void PerformJump()
