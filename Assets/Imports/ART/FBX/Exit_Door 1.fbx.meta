@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f65397db2eda054db9873988834a1fa
+guid: 7728dd7717fe910499061d9684999a59
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
+      name: Gradiant
     second: {fileID: 2100000, guid: 75fc9b46088b50c459e4bb7fbd472e76, type: 2}
   materials:
     materialImportMode: 2
@@ -40,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
