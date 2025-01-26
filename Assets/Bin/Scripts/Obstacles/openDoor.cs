@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Entities;
+using Manager;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -17,7 +19,6 @@ namespace EnvironmentObstacles
         //INSTPECTOR
         [Header("Informations")]
         [SerializeField] float _timer;
-        [SerializeField] string _menuName;
         [Header("Audio")]
         [SerializeField] AudioClip _audioClip;
         [SerializeField] AudioSource _audioSource;
@@ -28,7 +29,6 @@ namespace EnvironmentObstacles
         void Reset()
         {
             _timer = 2;
-            _menuName = "Menu";
         }
         #endregion
         #region Unity LifeCycle
@@ -42,6 +42,9 @@ namespace EnvironmentObstacles
             {
                 StartCoroutine(OpenDoorCoroutine());
                 _audioSource.PlayOneShot(_audioClip);
+                Jump jump = other.GetComponentInChildren<Jump>();
+                jump.enabled = false;
+                PlayerTimer.Instance.IsRunning = false;
             }
         }
         #endregion
@@ -49,7 +52,7 @@ namespace EnvironmentObstacles
         IEnumerator OpenDoorCoroutine()
         {
             yield return new WaitForSeconds(_timer);
-            SceneManager.LoadScene(_menuName);
+            UIManager.Instance.EnableWinmessage();
         }
         #endregion
     }

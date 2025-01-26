@@ -92,7 +92,6 @@ MonoBehaviour:
   _playerGameObject: {fileID: 0}
   _minScale: 0.2
   _maxScale: 2
-  _sceneName: Lev1
   _Timer: 3
   _hitEvent:
     m_PersistentCalls:
@@ -241,6 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2626718773573383380}
+  - component: {fileID: 6011415574436740310}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -267,6 +267,19 @@ Transform:
   - {fileID: 3158191935682921611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6011415574436740310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359526233029137387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3361dc4e6c248999fbcd186e5ab66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startAutomatically: 1
 --- !u!1 &7943113911418429851
 GameObject:
   m_ObjectHideFlags: 0
