@@ -31,14 +31,30 @@ namespace Entities
         private float _currentChargeTime;
         private bool _isCharging;
         //PUBLIC
+        public static Jump Instance;
         public float JumpForce { get => _jumpForce; set => _jumpForce = value; }
         public float MaxForwardForce { get => _maxForwardForce; set => _maxForwardForce = value; }
         public float BaseForwardForce { get => _baseForwardForce; set => _baseForwardForce = value; }
+        public float CurrentChargeTime { get => _currentChargeTime; set => _currentChargeTime = value; }
+        public float ChargeRate { get => _chargeRate; set => _chargeRate = value; }
         #endregion
         #region Default Informations
         #endregion
         #region Unity LifeCycle
         // Start is called before the first frame update
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                //Debug.Log("InputManager is single");
+                Instance = this;
+            }
+            else
+            {
+                Debug.Log("Jump already exist");
+                Destroy(this);
+            }
+        }
         void Start()
         {
             _inputsManager = InputsManager.Instance;
@@ -56,14 +72,14 @@ namespace Entities
         {
             if (_inputsManager.GetClick() && _grounded.IsGrounded == true)
             {
-                Debug.Log("Player is charging");
+                //Debug.Log("Player is charging");
                 StartCharging();
             }
             else
             {
                 if (_isCharging)
                 {
-                    Debug.Log("Player is Jumping");
+                    //Debug.Log("Player is Jumping");
                     PerformJump();
                     ResetCharge();
                 }
@@ -75,6 +91,11 @@ namespace Entities
         {
             _isCharging = true;
             _currentChargeTime += Time.deltaTime;
+            if (_currentChargeTime >= 10)
+            {
+                PerformJump();
+                ResetCharge();
+            }
             //Debug.Log($"CurrentChargTime = {_currentChargeTime}");
         }
 
