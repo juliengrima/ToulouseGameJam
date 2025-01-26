@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Entities;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -42,6 +43,8 @@ namespace EnvironmentObstacles
             {
                 StartCoroutine(OpenDoorCoroutine());
                 _audioSource.PlayOneShot(_audioClip);
+                Jump jump = other.GetComponentInChildren<Jump>();
+                jump.enabled = false;
             }
         }
         #endregion
