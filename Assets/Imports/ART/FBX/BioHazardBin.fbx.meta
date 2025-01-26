@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Gradiant
+      name: pasted__Gradiant
     second: {fileID: 2100000, guid: 75fc9b46088b50c459e4bb7fbd472e76, type: 2}
   materials:
     materialImportMode: 2
