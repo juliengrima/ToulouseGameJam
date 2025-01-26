@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer: 1
-  _damages: 0.1
+  _damages: 0.08
 --- !u!1001 &6282286535958952605
 PrefabInstance:
   m_ObjectHideFlags: 0
