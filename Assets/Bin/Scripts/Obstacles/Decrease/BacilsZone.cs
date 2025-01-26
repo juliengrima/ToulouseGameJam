@@ -11,7 +11,6 @@ namespace EnvironmentObstacles
         [SerializeField] float _timer;
         [SerializeField] float _damages;
         //PRIVATE
-        AudioManager _audioManager;
         Vector3 _scaleLife;
         bool _inZone;
         //PUBLIC
@@ -32,7 +31,6 @@ namespace EnvironmentObstacles
         }
         void Start()
         {
-            _audioManager = AudioManager.Instance;
             _scaleLife = new Vector3(_damages, _damages, _damages);
             _inZone = false;
         }
