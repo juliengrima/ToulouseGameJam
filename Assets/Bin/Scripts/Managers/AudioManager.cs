@@ -41,6 +41,11 @@ namespace Manager
         // Update is called once per frame
         #endregion
         #region Methods
+        void ResetPitch()
+        {
+            _audioSource.pitch = 1;
+        }
+
         public void PlayerTakeDamage()
         {
 
@@ -54,12 +59,31 @@ namespace Manager
 
         public void PlayerSmallDeath()
         {
+            _audioSource.pitch = 2.5f;
             _audioSource.PlayOneShot(_audioClips[2]);
+            ResetPitch();
         }
 
         public void PlayerBigDeath()
         {
+            _audioSource.pitch = 0.2f;
+            _audioSource.PlayOneShot(_audioClips[2]);
+            ResetPitch();
+        }
+
+        public void PlayerJump()
+        {
             _audioSource.PlayOneShot(_audioClips[3]);
+        }
+
+        public void PlayerLanding()
+        {
+            _audioSource.PlayOneShot(_audioClips[4]);
+        }
+
+        public void PlayerStretch()
+        {
+            _audioSource.PlayOneShot(_audioClips[5]);
         }
         #endregion
     }
