@@ -93,7 +93,16 @@ MonoBehaviour:
   _minScale: 0.2
   _maxScale: 2
   _sceneName: Lev1
-  _Timer: 0.3
+  _Timer: 3
+  _hitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _healEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4169662277103410225
 GameObject:
   m_ObjectHideFlags: 0

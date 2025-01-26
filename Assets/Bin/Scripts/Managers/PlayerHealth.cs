@@ -34,6 +34,7 @@ namespace Manager
         AudioManager _audioManager;
         //PUBLIC
         public static PlayerHealth Instance;
+        public float MaxScale { get => _maxScale; set => _maxScale = value; }
         #endregion
         #region Default Informations
         void Reset()
@@ -92,7 +93,7 @@ namespace Manager
                 Debug.Log($"Jump Script = {jump.enabled}");
                 Debug.Log("Player is dead");
 
-                PlayerDeathCoroutine();
+                StartCoroutine(PlayerDeathCoroutine());
 
                 _deathEvent.Invoke();
             }
@@ -102,8 +103,6 @@ namespace Manager
         {
             //Debug.Log($"Heal = {healAmount}");
             _player.ScaleLife += healAmount;
-            Grounded grounded = _playerGameObject.GetComponentInChildren<Grounded>();
-            //grounded.RayDistance = 
             _healEvent.Invoke();
             //_audioManager?.PlayerHeal();
 
@@ -116,7 +115,7 @@ namespace Manager
                 jump.enabled = false;
                 _player.ScaleLife = new Vector3(_maxScale, _maxScale, _maxScale);
 
-                PlayerDeathCoroutine();
+                StartCoroutine(PlayerDeathCoroutine());
 
                 _deathEvent.Invoke();
             }
