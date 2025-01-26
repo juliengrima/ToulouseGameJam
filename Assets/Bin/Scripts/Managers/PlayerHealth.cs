@@ -78,14 +78,16 @@ namespace Manager
         {
             //Debug.Log($"Heal = {scaleLife}");
             _player.ScaleLife -= scaleLife;
+            Rigidbody rb = _playerGameObject.GetComponent<Rigidbody>();
+            rb.mass -= scaleLife.x;
             _hitEvent.Invoke();
-            //_audioManager?.PlayerTakeDamage();
+            _audioManager?.PlayerTakeDamage();
 
             if (_player.ScaleLife.x < _minScale &&
                 _player.ScaleLife.y < _minScale &&
                 _player.ScaleLife.z < _minScale)
             {
-                //HandlePlayerDeath(_audioManager.PlayerSmallDeath);
+                HandlePlayerDeath(_audioManager.PlayerSmallDeath);
                 Jump jump = _playerGameObject.GetComponentInChildren<Jump>();
                 jump.enabled = false;
                 _player.ScaleLife = new Vector3(0.2f, 0.2f, 0.2f);
@@ -103,14 +105,17 @@ namespace Manager
         {
             //Debug.Log($"Heal = {healAmount}");
             _player.ScaleLife += healAmount;
+            Rigidbody rb = _playerGameObject.GetComponent<Rigidbody>();
+            rb.mass += healAmount.x;
+
             _healEvent.Invoke();
-            //_audioManager?.PlayerHeal();
+            _audioManager?.PlayerHeal();
 
             if (_player.ScaleLife.x > _maxScale &&
                 _player.ScaleLife.y > _maxScale &&
                 _player.ScaleLife.z > _maxScale)
             {
-                //HandlePlayerDeath(_audioManager.PlayerBigDeath);
+                HandlePlayerDeath(_audioManager.PlayerBigDeath);
                 Jump jump = _playerGameObject.GetComponentInChildren<Jump>();
                 jump.enabled = false;
                 _player.ScaleLife = new Vector3(_maxScale, _maxScale, _maxScale);
@@ -121,11 +126,11 @@ namespace Manager
             }
         }
 
-        //private void HandlePlayerDeath(System.Action deathAudioCallback)
-        //{
-        //    deathAudioCallback?.Invoke();
-        //    StartCoroutine(PlayerDeathCoroutine());
-        //}
+        private void HandlePlayerDeath(System.Action deathAudioCallback)
+        {
+            deathAudioCallback?.Invoke();
+            StartCoroutine(PlayerDeathCoroutine());
+        }
 
         IEnumerator PlayerDeathCoroutine()
         {

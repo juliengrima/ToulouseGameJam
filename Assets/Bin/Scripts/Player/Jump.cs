@@ -21,8 +21,10 @@ namespace Entities
         [SerializeField] Player _player;
         [Header("Jump Charge")]
         [SerializeField] float _chargeRate;
+        [SerializeField] float _multiplyTime;
         //PRIVATE
         private InputsManager _inputsManager;
+        private AudioManager _audioManager;
         private Grounded _grounded;
         private Rigidbody _rb;
         float _jumpForce;
@@ -58,6 +60,7 @@ namespace Entities
         void Start()
         {
             _inputsManager = InputsManager.Instance;
+            _audioManager = AudioManager.Instance;
             _grounded = Grounded.Instance;
             _rb = GetComponentInParent<Rigidbody>();
 
@@ -90,7 +93,7 @@ namespace Entities
         private void StartCharging()
         {
             _isCharging = true;
-            _currentChargeTime += Time.deltaTime;
+            _currentChargeTime += Time.deltaTime * _multiplyTime;
             if (_currentChargeTime >= 10)
             {
                 PerformJump();
@@ -112,6 +115,8 @@ namespace Entities
             // Appliquer une force vers le haut et dans l'axe Z
             Vector3 jumpDirection = transform.forward * forwardForce + Vector3.up * _jumpForce;
             _rb.AddForce(jumpDirection, ForceMode.Impulse);
+
+            _audioManager.PlayerJump();
         }
 
         private void ResetCharge()
