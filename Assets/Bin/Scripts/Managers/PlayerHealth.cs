@@ -24,7 +24,6 @@ namespace Manager
         [SerializeField] float _minScale;
         [SerializeField] float _maxScale;
         [Header("Respawn Settings")]
-        [SerializeField] string _sceneName;
         [SerializeField] float _Timer;
         [Header("Events")]
         [SerializeField] UnityEvent _hitEvent;
@@ -32,6 +31,7 @@ namespace Manager
         [SerializeField] UnityEvent _deathEvent;
         //PRIVATE
         AudioManager _audioManager;
+        string _sceneName;
         //PUBLIC
         public static PlayerHealth Instance;
         public float MaxScale { get => _maxScale; set => _maxScale = value; }
@@ -41,7 +41,6 @@ namespace Manager
         {
             _minScale = 0.2f;
             _maxScale = 2;
-            _sceneName = "Lev1";
             _Timer = 3;
         }
         #endregion
@@ -64,6 +63,7 @@ namespace Manager
         void Start()
         {
             _audioManager = AudioManager.Instance;
+            _sceneName = SceneManager.GetActiveScene().name;
             _player.ScaleLife = new Vector3(1, 1, 1);
         }
 
