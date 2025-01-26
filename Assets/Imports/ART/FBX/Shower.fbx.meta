@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Gradiant
     second: {fileID: -876546973899608171, guid: 8ae4ef8d5354ab44e94eded5b9e49164, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 13a18d0ef82e14e3a8ebaf9ed5c2584b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
