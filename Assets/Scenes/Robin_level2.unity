@@ -2366,6 +2366,7 @@ GameObject:
   - component: {fileID: 1040717187}
   - component: {fileID: 1040717186}
   - component: {fileID: 1040717185}
+  - component: {fileID: 1040717188}
   m_Layer: 0
   m_Name: Objet ventilateur
   m_TagString: Untagged
@@ -2464,6 +2465,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040717183}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1040717188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040717183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0178640b2d4d443d4bdd6ad87e65f596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _force: 10
 --- !u!1 &1073719614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3194,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692854621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1786854805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071065
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149315529266839448, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308501948924310887, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: m_Name
+      value: p_Ventilo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569869109534966965, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: _force
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018182835277241817, guid: 8f810418233c7c243989f132911b6a59, type: 3}
+      propertyPath: _force
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f810418233c7c243989f132911b6a59, type: 3}
 --- !u!1 &1923372683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,3 +3502,4 @@ SceneRoots:
   - {fileID: 1375154340}
   - {fileID: 937021887}
   - {fileID: 1498638379}
+  - {fileID: 1786854805}
