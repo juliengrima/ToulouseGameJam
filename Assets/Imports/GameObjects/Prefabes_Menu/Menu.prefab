@@ -600,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 16, y: -19.288002}
+  m_AnchoredPosition: {x: 16, y: -19.28801}
   m_SizeDelta: {x: 188.99, y: 41.423996}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5162533396367447117
@@ -2473,9 +2473,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
-        m_MethodName: Quit_Game
+      - m_Target: {fileID: 4136738228208645075}
+        m_TargetAssemblyTypeName: Manager.GameQuit, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2484,7 +2484,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &4583232541776798739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72719366413a3d94fba1680d0aa9bb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destinationScenes: 
+  _destinationScenes: Game Level 1
 --- !u!1 &6106195895783048222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,6 +3616,7 @@ GameObject:
   - component: {fileID: 7476379763371290}
   - component: {fileID: 3833824393368643530}
   - component: {fileID: 9026368216401694750}
+  - component: {fileID: 4136738228208645075}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3711,6 +3712,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4136738228208645075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598880464869191691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00749f532936b4d33a6ea2d50c41bd4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6824485307218212831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,4 +4525,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72719366413a3d94fba1680d0aa9bb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destinationScenes: 
+  _destinationScenes: Game Level 2
