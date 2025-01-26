@@ -34,6 +34,7 @@ namespace Manager
         AudioManager _audioManager;
         //PUBLIC
         public static PlayerHealth Instance;
+        public float MaxScale { get => _maxScale; set => _maxScale = value; }
         #endregion
         #region Default Informations
         void Reset()
