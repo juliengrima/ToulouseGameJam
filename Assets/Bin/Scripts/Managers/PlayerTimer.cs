@@ -62,7 +62,7 @@ namespace Manager
             {
                 _elapsedTime += Time.deltaTime; // Augmente le temps écoulé
             }
-            Debug.Log($"temp = {_elapsedTime}");
+            //Debug.Log($"temp = {_elapsedTime}");
         }
         #endregion
         #region Methods
