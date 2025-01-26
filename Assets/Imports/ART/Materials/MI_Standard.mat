@@ -122,18 +122,20 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Range: 0
+    - _Fresnel_Range: 2.71
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Intensity: 0.09
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacity_Range: 3
+    - _Opacity_Range: 0.97
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Scene_depht: 5.14
     - _ShadinSize: 0.4
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -147,7 +149,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_Fresnel: {r: 0, g: 0.6203829, b: 1, a: 0}
+    - _Color_Fresnel: {r: 0, g: 1, b: 0.5486355, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Remappin_Max: {r: 0.4, g: 2, b: 0, a: 0}
     - _Remappin_Min: {r: -1, g: 0.2, b: 0, a: 0}
